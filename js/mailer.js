@@ -10,9 +10,9 @@ function sendEmail() {
         email: document.getElementById('volunteer_email').value,
         message: document.getElementById('volunteer_message').value
     };
-    const serviceID = 'service_fw705r9'
+    const serviceID = 'service_38s65kd'
     const templateID = 'template_7kic30b'
-
+    console.log('test')
     emailjs.send(serviceID, templateID, params)
         .then(
 
