@@ -12,7 +12,6 @@ function sendEmail() {
     };
     const serviceID = 'service_38s65kd'
     const templateID = 'template_7kic30b'
-    console.log('test')
     emailjs.send(serviceID, templateID, params)
         .then(
 
@@ -20,8 +19,6 @@ function sendEmail() {
                 document.getElementById('volunteer_name').value
                 document.getElementById('volunteer_email').value
                 document.getElementById('volunteer_message').value
-
-                console.log(res)
                 alert("Email sent!")
             })
         .catch((err) => console.log(err));
