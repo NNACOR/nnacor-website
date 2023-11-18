@@ -23,4 +23,5 @@ function sendEmail() {
                 alert("Email sent!")
             })
         .catch((err) => console.log(err));
+    
 }
