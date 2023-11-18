@@ -4,14 +4,15 @@ using Email JS for sending emails
 Author: Volan Nnanpalle
 */
 
+
 function sendEmail() {
     var params = {
         name: document.getElementById('volunteer_name').value,
         email: document.getElementById('volunteer_email').value,
         message: document.getElementById('volunteer_message').value
     };
-    const serviceID = 'service_38s65kd'
-    const templateID = 'template_7kic30b'
+    const serviceID = window.config.emailjs_service_id;
+    const templateID = window.config.emailjs_template_id;
     emailjs.send(serviceID, templateID, params)
         .then(
 

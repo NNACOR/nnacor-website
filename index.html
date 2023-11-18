@@ -1019,12 +1019,16 @@
         <div class="loader"></div>
     </div>
 
+    <script src="config.js"></script>
+
     <!-- For EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
+        
         (function () {
-            emailjs.init("E3mtC_xwZVwSH0hPS"); //account public key
+            const emailjs_public_id = window.config.emailjs_public_id;
+            emailjs.init(emailjs_public_id); //account public key
         })();
     </script>
 
