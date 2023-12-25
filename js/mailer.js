@@ -5,7 +5,7 @@ Author: Volan Nnanpalle
 */
 
 
-function sendEmail() {
+async function sendEmail() {
     let volunteer_email = document.getElementById('volunteer_email').value
     let volunteer_name = document.getElementById('volunteer_name').value
     let subject = 'New Volunteer Request message from NNACOR Website from: ' + volunteer_name
@@ -20,15 +20,18 @@ function sendEmail() {
     <br>
     <h4>Volunteer's Message: </h4>${volunteer_message}
     `;
-
-    Email.send({
+    
+    //inside async function
+    const message = await window.Email.send({
         SecureToken: "7f2bb0a1-4e31-4eeb-b429-a4fbd51dbca5",
         To: 'nnacorarayoflight@gmail.com',
         From: 'nnacorarayoflight@gmail.com',
         Subject: subject,
         Body: body
-    }).then(
-        message => alert('Email Sent!')
-    );
+    });
+    if (message === "OK") {
+
+        alert('Email Sent!')
+    }
 
 }
